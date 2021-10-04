@@ -4,7 +4,7 @@ Author: Thomas Wrabetz
 
 Design: It's a text adventure, now in riveting two-column (or even three-column) format!
 
-Text Drawing: The text is rendered at runtime. I hardcoded the content strings themselves in playmode.cpp.  The rendering code is in TextRenderer.cpp/hpp and TextRenderProgram.cpp/hpp. I leaned heavily on the example another student posted in discord for the OpenGL calls. I made lots of improvements to non-openGL parts of the text rendering, like using harfbuzz glyphs correctly and supporting/caching any character in the font when it is needed. There are attributions in the code. I also added more formatting features, like supporting both automatic and manual line breaks, and overflowing text to arbitrary chains of backup text renderers.
+Text Drawing: The text is rendered at runtime. I hardcoded the content strings themselves in playmode.cpp.  The rendering code is in TextRenderer.cpp/hpp and TextRenderProgram.cpp/hpp. I leaned heavily on the example Oscar Huang posted in discord for the OpenGL calls. Oscar gave me permission to use his code, and there are attributions for each spot it was used. I made lots of improvements to non-openGL parts of the text rendering, like using harfbuzz glyphs correctly and supporting/caching any character in the font only when it is needed. I also added more formatting features, like supporting both automatic and manual line breaks, and overflowing text to arbitrary chains of backup text renderers.
 
 Screen Shot:
 
