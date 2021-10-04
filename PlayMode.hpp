@@ -8,6 +8,25 @@
 #include <vector>
 #include <deque>
 
+#include "TextRenderer.hpp"
+#include "data_path.hpp"
+
+struct OptionNode;
+
+struct StoryNode
+{
+	int level;
+	std::string title;
+	std::string body;
+	std::vector<OptionNode> options;
+};
+
+struct OptionNode
+{
+	std::string label;
+	StoryNode* targetNode;
+};
+
 struct PlayMode : Mode {
 	PlayMode();
 	virtual ~PlayMode();
@@ -25,24 +44,29 @@ struct PlayMode : Mode {
 		uint8_t pressed = 0;
 	} left, right, down, up;
 
-	//local copy of the game scene (so code can change it during gameplay):
-	Scene scene;
+	void activate_node(StoryNode* node);
 
-	//hexapod leg to wobble:
-	Scene::Transform *hip = nullptr;
-	Scene::Transform *upper_leg = nullptr;
-	Scene::Transform *lower_leg = nullptr;
-	glm::quat hip_base_rotation;
-	glm::quat upper_leg_base_rotation;
-	glm::quat lower_leg_base_rotation;
-	float wobble = 0.0f;
+	StoryNode* root;
+	StoryNode* currentNode;
 
-	glm::vec3 get_leg_tip_position();
+	glm::vec3 white = glm::vec3(1.0f);
 
-	//music coming from the tip of the leg (as a demonstration):
-	std::shared_ptr< Sound::PlayingSample > leg_tip_loop;
-	
-	//camera:
-	Scene::Camera *camera = nullptr;
+	glm::vec3 green = glm::vec3(0.2f, 1.0f, 0.1f);
+	glm::vec3 lime = glm::vec3(0.5f, 1.0f, 0.1f);
+	glm::vec3 yellow = glm::vec3(0.8f, 1.0f, 0.1f);
+
+	TextRenderer titleRenderer = TextRenderer(data_path("impact.ttf"), 100, 0.0f, 0.0f, 800.0f, 1000.0f, true, nullptr, false, white);
+	TextRenderer bodyOverflow = TextRenderer(data_path("times.ttf"), 36, 1190.0f, 125.0f, 500.0f, 500.0f, false, nullptr, true, white);
+	TextRenderer bodyRenderer = TextRenderer(data_path("times.ttf"), 36, 250.0f, 125.0f, 500.0f, 500.0f, false, &bodyOverflow, false, white);
+
+	TextRenderer psychBodyOverflow2 = TextRenderer(data_path("Candara.ttf"), 36, 1300.0f, 500.0f, 350.0f, 350.0f, false, nullptr, true, yellow);
+	TextRenderer psychBodyOverflow = TextRenderer(data_path("Candara.ttf"), 36, 800.0f, 300.0f, 350.0f, 350.0f, false, &psychBodyOverflow2, true, lime);
+	TextRenderer psychBodyRenderer = TextRenderer(data_path("Candara.ttf"), 36, 300.0f, 100.0f, 350.0f, 350.0f, false, &psychBodyOverflow, false, green);
+
+	TextRenderer optionRenderer = TextRenderer(data_path("gadugi.ttf"), 42, 0.0f, 800.0f, 1500.0f, 100.0f, true, nullptr, false, white);
+
+	TextRenderer* currentBodyRenderer = &bodyRenderer;
+
+	StoryNode* visions;
 
 };
