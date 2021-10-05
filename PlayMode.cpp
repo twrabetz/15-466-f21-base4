@@ -16,7 +16,7 @@ PlayMode::PlayMode() {
 	StoryNode* church = new StoryNode{ 10, "Church", "The pastor drones on and on in the 90-degree weather. \"Can you believe Jeremiah has "
 		"FOUR wives?!\" whispers Constance to Veronica...\n\nEverybody stands up. Time to sing songs.", {{"Hallelujah", nullptr}}};
 	StoryNode* mormonism = new StoryNode{ 10, "Mormonism", "You come home with groceries. All the chores are done. Finally, time for a little TV..."
-		"\n\n\"Don't be silly darling! It's time for Church!\" exclaims Sheila.\n\nAh right, church.", {{"Relapse", nullptr}, {"Church", church}} };
+		"\n\n\"Don't be silly darling! It's time for Church!\" exclaims Sheila.\n\n\nAh right, church.", {{"Relapse", nullptr}, {"Church", church}} };
 	church->options[0].targetNode = mormonism;
 
 	StoryNode* praiseJesus = new StoryNode{ 9, "Hallelujah!", "Years pass. You are now married to Sheila. And Constance. And Veronica.\n\n"
@@ -25,7 +25,7 @@ PlayMode::PlayMode() {
 	StoryNode* giveInToResponsibleness = new StoryNode{ 8, "Latter Day Chores", "You let the responsibleness flow through you...\n\n"
 		"Over the next few weeks, changes you never imagined begin to take place. You finish your homework! You graduate from college.\nBut the "
 		"responsibleness doesn't stop there! One day, you pass by a mormon handing out leaflets. \"Become a mormon and praise Jesus!\" he exclaims."
-		"\n\n\nYou have been pretty responsible lately. But is this really you?", {{"Relapse", nullptr}, {"Praise Jesus", praiseJesus}}};
+		"\n\n\n\nYou have been pretty responsible lately. But is this really you?", {{"Relapse", nullptr}, {"Praise Jesus", praiseJesus}}};
 	StoryNode* resistResponsibleness = new StoryNode{ 8, "The #Resistance", "You successfully beat back the responsibleness. Wow, that was scary. "
 		"Anyhow, you spend "
 		"the rest of the day watching TV. And the next day. And the next day....", { {"Zzzzzzz....", nullptr} } };
@@ -47,7 +47,7 @@ PlayMode::PlayMode() {
 		"\n\nWhat a wonderful life!\n\n[This is an ending. Quit game to restart]." };
 
 	StoryNode* hospital = new StoryNode{ 9, "The Hospital", "You come to in a hospital bed. Sheila is sleeping beside you in a chair. As you come to, "
-		"she wakes up and tearfully embraces you. \"I thought you were gonna die because I smacked you too hard! It made me realize that I can't live "
+		"she wakes up and tearfully embraces you. \"I thought you were gonna die because I smacked you too hard!\n\n\nIt made me realize that I can't live "
 		"without you!\"\n\nOh jeez.", {{"Marry Her", marriage}, {"Back To Sleep", nullptr}} };
 
 	StoryNode* glassField = new StoryNode{ 8, "The Hills of Glass", "You emerge from the vortex and land hard on a smooth surface. All around you,"
@@ -70,7 +70,7 @@ PlayMode::PlayMode() {
 		"stare the shocked teller in the face. With trembling hands, he presses a button under his desk. A wall panel to your left opens to reveal a "
 		"hidden elevator.\n\n\"G-g-g-o right ahead, sir!\" stammers the teller, saluting you. You step inside the elevator, and press the solitary "
 		"TOP button. You are whisked up hundreds of floors to the master boardroom. As you stride out of the elevator, the bank CEO hands you his "
-		" resignation and the gray-suited executives bow down, chanting,\n\n\"ALL HAIL LORD BUSINESS!\"\n\"ALL HAIL LORD BUSINESS!\"\n\n"
+		" resignation and the gray-suited executives bow down, chanting,\n\n\"ALL HAIL LORD BUSINESS!\"\n\"ALL HAIL LORD BUSINESS!\"\n"
 		"[This is an ending. Quit the game to restart.]" };
 	StoryNode* withdrawal = new StoryNode{ 12, "Withdrawal", "\"Here you go sir- $50.\"", {{"Back To Business", nullptr}} };
 
@@ -82,15 +82,15 @@ PlayMode::PlayMode() {
 		"that you've reached your final form. Thanks to the power of your combover, you are finally a high-powered go-getter. Time to head on over "
 		"to get a job at the bank!", {{"Business!", bank}} };
 	StoryNode* endItAll = new StoryNode{ 10, "To Be Continued?", "Slowly, you raise your hand towards the mirror. Your beam will be reflected and end "
-		"your pathetic existence. Deep down, you know it's better this way. You gather your inner strength and release it one last time...\n\n"
-		"What's this? Your plots are so dumb they start bleeding into real life! Thanks to the power of \"Mirror Crystals\", your beam punches a hole "
+		"your pathetic existence. Deep down, you know it's better this way. You gather your inner strength and release it one last time...\n\n\n"
+		"What's this? Your plots are so dumb they start bleeding into real life!\n\nThanks to the power of \"Mirror Crystals\", your beam punches a hole "
 		"through time! What will happen next?\n Stay tuned for the next episode!", { {"Cowabunga!", nullptr}} };
 
 	StoryNode* pursueMoney = new StoryNode{ 9, "Money!", "You spend decades drawing reams of derivative manga and anime. The world comes to adore you as "
 		"you churn out garbage day-in and day-out. Your net worth goes up and up and up.\n\nOne day, you look in the mirror of the upstairs bathroom in "
 		"your third mansion. Egads! Not only was your career stupid, but you're almost bald!", { {"Combover", combover}, {"End It All", endItAll}}};
 	StoryNode* pursueArt = new StoryNode{ 9, "Art!", "You try your hardest to come up with challenging, avant-garde cultural products. You spend years "
-		"wowing a small circle of nerdy critics. But ultimately, nobody cares.\n\nEnough art, time to get that bling.", {{"Pursue Money", pursueMoney}}};
+		"wowing a small circle of nerdy critics. But ultimately, nobody cares.\n\n\n\nEnough art, time to get that bling.", {{"Pursue Money", pursueMoney}}};
 
 	StoryNode* winspiration = new StoryNode{ 8, "Inspiration", "Your epic victory over Sheila inspires you to become a writer. Whole vistas of plot-free "
 		"print and animation expand before you!\n\nIt's not the most intelligent career, but it'll probably make money...",
@@ -124,7 +124,7 @@ PlayMode::PlayMode() {
 	StoryNode* goOutside = new StoryNode{ 3, "The Outside", "You walk out into the living room. It's not a pretty sight.\n\nThe trash is full of trash"
 		" and so is the recycling. Loose papers have long ago flowed off your desk and onto the floor. In the far corner, a pyramid of takeout containers "
 		"is on the brink of collapse.\n\nYou peek into the kitchen. The refrigrator door is tastefully cracked open. A tower of dishes rises high above"
-		" the sink.\nSuddenly, you have an overwhelming urge to go pee.", {{"Go Pee Immediately", goPee}}};
+		" the sink.\n\nSuddenly, you have an overwhelming urge to go pee.", {{"Go Pee Immediately", goPee}}};
 	StoryNode* cleanChipsOff = new StoryNode{ 3, "Coming Clean", "You wipe the pieces of chip off your foot.\n\nNow you have foot smell on your hand,"
 		" and you realize the pieces of chip just went back on the floor anyways.\n\nYou put your foot back down and "
 		"step in the chip crumbs again.", {{"Go Outside", goOutside}} };
