@@ -24,5 +24,13 @@ https://www.freetype.org/freetype2/docs/tutorial/step1.html
 
 https://github.com/ChunanGang/TextBasedGame
 
+Fonts:
+
+-Arial.ttf
+
+-Gadugi.ttf
+
+-Candara.ttf
+
 This game was built with [NEST](NEST.md).
 
