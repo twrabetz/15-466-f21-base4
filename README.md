@@ -26,11 +26,13 @@ https://github.com/ChunanGang/TextBasedGame
 
 Fonts:
 
--Arial.ttf
+-CMinoan.ttf
 
--Gadugi.ttf
+-Linguistics-Pro.otf
 
--Candara.ttf
+-Karma-Regular.otf
+
+-Now-Regular.otf
 
 This game was built with [NEST](NEST.md).
 

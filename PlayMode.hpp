@@ -55,15 +55,15 @@ struct PlayMode : Mode {
 	glm::vec3 lime = glm::vec3(0.5f, 1.0f, 0.1f);
 	glm::vec3 yellow = glm::vec3(0.8f, 1.0f, 0.1f);
 
-	TextRenderer titleRenderer = TextRenderer(data_path("impact.ttf"), 100, 0.0f, 0.0f, 800.0f, 1000.0f, true, nullptr, false, white);
-	TextRenderer bodyOverflow = TextRenderer(data_path("times.ttf"), 36, 1190.0f, 125.0f, 500.0f, 500.0f, false, nullptr, true, white);
-	TextRenderer bodyRenderer = TextRenderer(data_path("times.ttf"), 36, 250.0f, 125.0f, 500.0f, 500.0f, false, &bodyOverflow, false, white);
+	TextRenderer titleRenderer = TextRenderer(data_path("CMinoanHinted.ttf"), 100, 0.0f, 0.0f, 800.0f, 1920.0f, true, nullptr, false, white);
+	TextRenderer bodyOverflow = TextRenderer(data_path("LinguisticsPro-Regular.otf"), 36, 1190.0f, 125.0f, 500.0f, 500.0f, false, nullptr, true, white);
+	TextRenderer bodyRenderer = TextRenderer(data_path("LinguisticsPro-Regular.otf"), 36, 250.0f, 125.0f, 500.0f, 500.0f, false, &bodyOverflow, false, white);
 
-	TextRenderer psychBodyOverflow2 = TextRenderer(data_path("Candara.ttf"), 36, 1300.0f, 500.0f, 350.0f, 350.0f, false, nullptr, true, yellow);
-	TextRenderer psychBodyOverflow = TextRenderer(data_path("Candara.ttf"), 36, 800.0f, 300.0f, 350.0f, 350.0f, false, &psychBodyOverflow2, true, lime);
-	TextRenderer psychBodyRenderer = TextRenderer(data_path("Candara.ttf"), 36, 300.0f, 100.0f, 350.0f, 350.0f, false, &psychBodyOverflow, false, green);
+	TextRenderer psychBodyOverflow2 = TextRenderer(data_path("Karma-Regular.otf"), 36, 1300.0f, 500.0f, 350.0f, 350.0f, false, nullptr, true, yellow);
+	TextRenderer psychBodyOverflow = TextRenderer(data_path("Karma-Regular.otf"), 36, 800.0f, 300.0f, 350.0f, 350.0f, false, &psychBodyOverflow2, true, lime);
+	TextRenderer psychBodyRenderer = TextRenderer(data_path("Karma-Regular.otf"), 36, 300.0f, 100.0f, 350.0f, 350.0f, false, &psychBodyOverflow, false, green);
 
-	TextRenderer optionRenderer = TextRenderer(data_path("gadugi.ttf"), 42, 0.0f, 800.0f, 1500.0f, 100.0f, true, nullptr, false, white);
+	TextRenderer optionRenderer = TextRenderer(data_path("Now-Regular.otf"), 42, 0.0f, 800.0f, 1500.0f, 100.0f, true, nullptr, false, white);
 
 	TextRenderer* currentBodyRenderer = &bodyRenderer;
 
